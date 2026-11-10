@@ -1,0 +1,9 @@
+{
+  "id": "1234",
+  "title": "Hôm nay học React",
+  "content": "Nội dung bài viết...",
+  "mood": 8,
+  "tags": ["react", "mindx"],
+  "createdAt": "2026-11-10T10:00:00Z",
+  "updatedAt": "2026-11-10T10:00:00Z"
+}
