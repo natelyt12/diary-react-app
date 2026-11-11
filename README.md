@@ -24,9 +24,18 @@ react_ck/
 │   └── icons.svg
 ├── src/
 │   ├── components/
-│   │   └── Button.jsx
+│   │   ├── interface/
+│   │   │   └── Button.jsx
+│   │   └── section/
+│   │       ├── Sidebar.jsx
+│   │       └── Timeline.jsx
+│   ├── pages/
+│   │   └── dashboard.jsx
 │   ├── temp/
-│   │   └── button_showcase.jsx
+│   │   ├── button_showcase.jsx
+│   │   ├── mood_level.js
+│   │   ├── sample_data_structure.js
+│   │   └── sample_data_structure.json
 │   ├── App.css
 │   ├── App.jsx
 │   └── main.jsx

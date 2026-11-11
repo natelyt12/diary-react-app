@@ -55,18 +55,4 @@ export const MOOD_LEVELS = [
   },
 ];
 
-// Map tra cứu nhanh theo key (ví dụ: MOOD_BY_KEY['cheerful'])
-export const MOOD_BY_KEY = Object.fromEntries(
-  MOOD_LEVELS.map((mood) => [mood.key, mood])
-);
-
-// Map tra cứu nhanh theo value (ví dụ: MOOD_BY_VALUE[8])
-export const MOOD_BY_VALUE = Object.fromEntries(
-  MOOD_LEVELS.map((mood) => [mood.value, mood])
-);
-
-// Helper lấy mood theo key hoặc value
-export const getMoodByKey = (key) => MOOD_BY_KEY[key] ?? null;
-export const getMoodByValue = (value) => MOOD_BY_VALUE[value] ?? null;
-
 export default MOOD_LEVELS;
