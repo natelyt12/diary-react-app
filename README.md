@@ -42,16 +42,19 @@ react_ck/
 ## Getting Started
 
 1. Install dependencies:
+
 ```bash
-pnpm install
+npm install
 ```
 
 2. Start the local development server:
+
 ```bash
-pnpm dev
+npm run dev
 ```
 
 3. Build for production:
+
 ```bash
-pnpm build
+npm run build
 ```

@@ -16,7 +16,7 @@ export const SAMPLE_ENTRY = {
   id: "1234",
   title: "Hôm nay học React",
   content: "Nội dung bài viết...",
-  mood: 8, // Mức 8 - Phấn khởi (cheerful), hex: #43A047
+  mood: 8, // Mức 8 - Vui vẻ (cheerful), hex: #43A047
   tags: ["react", "mindx"],
   createdAt: "2026-11-10T10:00:00Z",
   updatedAt: "2026-11-10T10:00:00Z",
@@ -29,7 +29,7 @@ export const SAMPLE_ENTRIES = [
     id: "1235",
     title: "Buổi chiều thư giãn đọc sách",
     content: "Đọc xong một chương sách hay về tâm lý học và nhâm nhi trà.",
-    mood: 6, // Mức 6 - Thanh thản (calm), hex: #C0CA33
+    mood: 6, // Mức 6 - Thư thái (calm), hex: #C0CA33
     tags: ["relax", "reading"],
     createdAt: "2026-11-09T15:30:00Z",
     updatedAt: "2026-11-09T15:30:00Z",
@@ -38,7 +38,7 @@ export const SAMPLE_ENTRIES = [
     id: "1236",
     title: "Deadline dí sát nút",
     content: "Nhiều bài tập cần nộp trước cuối tuần, cảm thấy hơi áp lực.",
-    mood: 3, // Mức 3 - Lo âu (anxious), hex: #F4511E
+    mood: 3, // Mức 3 - Lo lắng (anxious), hex: #F4511E
     tags: ["school", "deadline"],
     createdAt: "2026-11-08T21:00:00Z",
     updatedAt: "2026-11-08T21:00:00Z",

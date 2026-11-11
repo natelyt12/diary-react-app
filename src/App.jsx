@@ -1,10 +1,10 @@
-import ButtonShowcase from "./temp/button_showcase";
+import Dashboard from "./pages/dashboard";
 
 const App = () => {
   return (
-    <>
-      <ButtonShowcase />
-    </>
+    <div className="bg-neutral-50 h-dvh">
+      <Dashboard />
+    </div>
   );
 };
 

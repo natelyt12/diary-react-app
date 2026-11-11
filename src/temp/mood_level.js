@@ -2,19 +2,19 @@ export const MOOD_LEVELS = [
   {
     value: 1,
     key: "exhausted",
-    label: "Kiệt quệ",
+    label: "Kiệt sức",
     hex: "#B71C1C",
   },
   {
     value: 2,
     key: "frustrated",
-    label: "Tức giận",
+    label: "Bực bội",
     hex: "#E53935",
   },
   {
     value: 3,
     key: "anxious",
-    label: "Lo âu",
+    label: "Lo lắng",
     hex: "#F4511E",
   },
   {
@@ -32,25 +32,25 @@ export const MOOD_LEVELS = [
   {
     value: 6,
     key: "calm",
-    label: "Thanh thản",
+    label: "Thư thái",
     hex: "#C0CA33",
   },
   {
     value: 7,
     key: "optimistic",
-    label: "Lạc quan",
+    label: "Tích cực",
     hex: "#7CB342",
   },
   {
     value: 8,
     key: "cheerful",
-    label: "Phấn khởi",
+    label: "Vui vẻ",
     hex: "#43A047",
   },
   {
     value: 9,
     key: "thriving",
-    label: "Thăng hoa",
+    label: "Tuyệt vời",
     hex: "#1B5E20",
   },
 ];

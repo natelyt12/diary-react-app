@@ -17,7 +17,7 @@ export const Button = ({
   disabled = false,
   ...props
 }) => {
-  // Variant styles: Primary, Secondary, Danger, Ghost (no background)
+  // kiểu nút: Primary, Secondary, Danger, Ghost (không có background trong nút)
   const variantStyles = {
     primary:
       "bg-neutral-800 text-neutral-50 hover:bg-neutral-600 disabled:hover:bg-neutral-800",
@@ -31,14 +31,13 @@ export const Button = ({
   // Check if it's icon-only (icon provided, no children/label)
   const isIconOnly = Boolean(icon && !children);
 
-  // Height & Shape: h-9 ensures identical height for all buttons.
   // aspect-square on icon-only ensures a 1:1 perfect square ratio (h-9 w-9).
   const shapeStyle = isIconOnly ? "h-9 w-9 p-0 aspect-square" : "h-9 px-4 py-2";
 
   return (
     <button
       disabled={disabled}
-      className={`inline-flex items-center justify-center gap-2 rounded-md font-medium text-sm transition-colors hover:duration-0 duration-200 cursor-pointer disabled:opacity-50 select-none shrink-0 ${variantStyles[variant] || variantStyles.primary} ${shapeStyle} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-full font-medium text-sm transition-colors hover:duration-0 duration-200 cursor-pointer disabled:opacity-50 select-none shrink-0 ${variantStyles[variant] || variantStyles.primary} ${shapeStyle} ${className}`}
       {...props}
     >
       {icon && iconPosition === "left" && (
