@@ -1,0 +1,53 @@
+LO TRINH CAC BUOC CON LAI CHO TIPTAP EDITOR & DEXIE (INDEXEDDB)
+==================================================================
+
+Hiện tại đã xong:
+- Màn hình viết bài (/write) nối qua React Router
+- Tiptap Editor với StarterKit + Image
+- Toolbar (Heading dropdown, Bold, Italic, Strike, Lists, Quote, Image Attach, Undo/Redo)
+- CSS định dạng cho .tiptap trong src/App.css
+
+------------------------------------------------------------------
+BƯỚC 3: LẤY DỮ LIỆU TỪ TIPTAP & LƯU VÀO DEXIE (INDEXEDDB)
+------------------------------------------------------------------
+1. Tạo database Dexie (ví dụ: src/db/diaryDb.js):
+   - Khai báo bảng `diaries` với các cột index: `++id, mood, createdAt, updatedAt`
+   - Dữ liệu mỗi bài viết khớp với src/temp/sample_data_structure.json:
+     {
+       title: "...",
+       content: editor.getJSON(),   // Object cây JSON của Tiptap (lưu trực tiếp vào IndexedDB)
+       plainText: editor.getText(), // Chuỗi chữ thuần để hiện preview & tìm kiếm
+       mood: selectedMood,
+       createdAt: new Date().toISOString(),
+       updatedAt: new Date().toISOString(),
+     }
+
+2. Kết nối DiaryEditor với nút "Đăng nhật ký" ở src/pages/write.jsx:
+   - Cách dễ hiểu nhất: truyền `onUpdate` từ Write.jsx xuống DiaryEditor.jsx, mỗi khi gõ
+     Tiptap sẽ cập nhật state `content` (JSON) và `plainText` ở Write.jsx.
+   - Khi bấm "Đăng nhật ký": gọi `await db.diaries.add({ ... })` rồi `navigate("/")`.
+
+------------------------------------------------------------------
+BƯỚC 4: HIỂN THỊ LẠI BÀI VIẾT (READ-ONLY) TRÊN TIMELINE / CHI TIẾT
+------------------------------------------------------------------
+1. Ở Timeline (src/components/section/Timeline.jsx):
+   - Dùng `useLiveQuery(() => db.diaries.orderBy("createdAt").reverse().toArray())`
+     để tự động lấy danh sách bài viết mới nhất.
+   - Hiện đoạn trích ngắn từ `entry.plainText` để card nhẹ và nhanh.
+
+2. Khi bấm xem chi tiết 1 bài nhật ký:
+   - Dùng lại `useEditor` với `editable: false` và `content: entry.content`.
+   - Render `<EditorContent editor={editor} />` — dùng chung CSS `.tiptap` nên
+     hiển thị Heading, List, Quote, Ảnh y hệt 100% lúc viết.
+
+------------------------------------------------------------------
+BƯỚC 5: TINH CHỈNH THÊM (NẾU CẦN)
+------------------------------------------------------------------
+- Thêm `@tiptap/extension-placeholder` để hiện chữ mờ "Hôm nay bạn thế nào?..."
+- Kiểm tra dung lượng ảnh trước khi đọc Base64 (ví dụ giới hạn < 2MB) để IndexedDB nhẹ.
+- Gắn lại danh sách cảm xúc từ `src/temp/mood_level.js` vào cột trái trang Write.
+- Thêm đếm số chữ / ký tự ở góc dưới Editor.
+
+
+Thêm gạch chân
+Thay font chữ cho editor làm mặc định (san-serif)
