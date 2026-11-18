@@ -98,19 +98,15 @@ def main():
     print("🌳 TREE - Hiển thị cây thư mục")
     print("=" * 50)
     
-    # Lấy đường dẫn từ tham số hoặc nhập tay
+    # Lấy đường dẫn từ tham số hoặc dùng mặc định (thư mục hiện tại)
     if len(sys.argv) > 1:
         path = sys.argv[1]
         max_depth = int(sys.argv[2]) if len(sys.argv) > 2 else 10
         show_hidden = '-a' in sys.argv or '--all' in sys.argv
     else:
-        path = input("Nhập đường dẫn (Enter = thư mục hiện tại): ").strip()
-        if not path:
-            path = "."
-        depth_input = input("Độ sâu tối đa (Enter = 10): ").strip()
-        max_depth = int(depth_input) if depth_input else 10
-        show_hidden_input = input("Hiển thị file ẩn? (y/n, Enter = n): ").strip().lower()
-        show_hidden = show_hidden_input == 'y'
+        path = "."
+        max_depth = 10
+        show_hidden = False
     
     print(f"📊 Hiển thị cây thư mục (độ sâu: {max_depth}, file ẩn: {'có' if show_hidden else 'không'})")
     print("=" * 50)

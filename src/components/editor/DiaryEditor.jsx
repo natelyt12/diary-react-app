@@ -19,7 +19,7 @@ const DiaryEditor = () => {
   return (
     <div>
       <Toolbar editor={editor} />
-      <EditorContent className="px-2" editor={editor} />
+      <EditorContent className="px-2 font-serif" editor={editor} />
     </div>
   );
 };

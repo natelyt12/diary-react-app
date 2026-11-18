@@ -22,21 +22,20 @@ const Write = () => {
         </div>
       </header>
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row gap-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-4 py-4 flex flex-col md:flex-row gap-4">
         <aside className="w-full md:w-72 shrink-0 flex flex-col gap-4">
-          <div className="bg-white rounded-2xl p-4 shadow-card">
+          <div className="bg-white rounded-xl p-4 shadow-card">
             <h2 className="text-sm font-semibold text-neutral-900 mb-3">
               Chọn cảm xúc của bạn
             </h2>
-            <div className="h-64 rounded-xl bg-neutral-100 flex items-center justify-center text-center px-4 text-xs text-neutral-500">
+            <div className="h-64 rounded-xl mb-4 bg-neutral-100 flex items-center justify-center text-center px-4 text-xs text-neutral-500">
               danh sách cảm xúc dạng checkbox
             </div>
+            <Button className="w-full">Đăng nhật ký</Button>
           </div>
-
-          <Button className="w-full">Đăng nhật ký</Button>
         </aside>
 
-        <section className="flex-1 bg-white rounded-2xl px-4 py-3 shadow-card min-h-105">
+        <section className="flex-1 bg-white rounded-xl px-4 py-3 shadow-card min-h-105">
           <DiaryEditor />
         </section>
       </main>

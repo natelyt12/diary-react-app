@@ -50,4 +50,4 @@ BƯỚC 5: TINH CHỈNH THÊM (NẾU CẦN)
 
 
 Thêm gạch chân
-Thay font chữ cho editor làm mặc định (san-serif)
+Thay font chữ cho editor làm mặc định (san-serif) DONE

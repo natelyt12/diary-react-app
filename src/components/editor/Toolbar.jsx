@@ -3,6 +3,7 @@ import { useEditorState } from "@tiptap/react";
 import {
   TextB,
   TextItalic,
+  TextUnderline,
   TextStrikethrough,
   ListBullets,
   ListNumbers,
@@ -26,6 +27,7 @@ const Toolbar = ({ editor }) => {
         heading,
         isBold: ctx.editor.isActive("bold"),
         isItalic: ctx.editor.isActive("italic"),
+        isUnderline: ctx.editor.isActive("underline"),
         isStrike: ctx.editor.isActive("strike"),
         isBulletList: ctx.editor.isActive("bulletList"),
         isOrderedList: ctx.editor.isActive("orderedList"),
@@ -72,6 +74,12 @@ const Toolbar = ({ editor }) => {
       icon: <TextItalic size={18} />,
       active: state.isItalic,
       onClick: () => editor.chain().focus().toggleItalic().run(),
+    },
+    {
+      label: "Gạch chân",
+      icon: <TextUnderline size={18} />,
+      active: state.isUnderline,
+      onClick: () => editor.chain().focus().toggleUnderline().run(),
     },
     {
       label: "Gạch ngang",
