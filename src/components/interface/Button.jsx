@@ -37,7 +37,7 @@ export const Button = ({
   return (
     <button
       disabled={disabled}
-      className={`inline-flex items-center justify-center gap-2 rounded-full font-medium text-sm transition-colors hover:duration-0 duration-200 cursor-pointer disabled:opacity-50 select-none shrink-0 ${variantStyles[variant] || variantStyles.primary} ${shapeStyle} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-lg font-medium text-sm transition-colors hover:duration-0 duration-200 cursor-pointer disabled:opacity-50 select-none shrink-0 ${variantStyles[variant] || variantStyles.primary} ${shapeStyle} ${className}`}
       {...props}
     >
       {icon && iconPosition === "left" && (

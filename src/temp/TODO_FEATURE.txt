@@ -1,0 +1,47 @@
+=== DANH SÁCH TÍNH NĂNG CẦN LÀM (TODO) ===
+
+[1] Dữ liệu & Lưu trữ (IndexedDB + DexieJS)
+- [IN PROGRESS] Thiết kế schema bảng nhật ký trong DexieJS (đã có `db.js` bản test `id, title, desc`; cần cập nhật sang `mood, content, createdAt, updatedAt`)
+- [IN PROGRESS] Viết các hàm CRUD: thêm nhật ký, lấy danh sách nhật ký, sửa nhật ký, xóa nhật ký (đã test `add`, `clear`, `useLiveQuery` trong Timeline)
+- Đọc/lưu cài đặt cá nhân hóa (tên người dùng, font chữ, theme, hình nền...)
+
+[2] Trang Viết / Sửa nhật ký (/write)
+- [IN PROGRESS] Hoàn thiện Tiptap Editor (đã có StarterKit, Image, Toolbar, CSS `.tiptap`; còn thiếu placeholder)
+- [DONE] Thanh chọn cảm xúc (đã có `MOOD_LEVELS` dùng chung + list button tự chế có hiệu ứng morph & hover theo màu)
+- Lấy output JSON từ Tiptap khi bấm "Đăng nhật ký" và lưu vào DB
+- Validate: yêu cầu chọn cảm xúc và có nội dung trước khi lưu
+- Hỗ trợ chế độ sửa nhật ký (nạp lại nội dung cũ vào Tiptap và cập nhật DB)
+- (Nhỏ) Daily prompt gợi ý viết nhật ký (gacha vài câu hỏi mẫu)
+
+[3] Dashboard & Timeline (/)
+- [IN PROGRESS] Khung layout Dashboard + Timeline + điều hướng sang `/write`, `/summary`, `/settings`
+- Hiển thị danh sách nhật ký từ DB theo dòng thời gian (ngày tháng, nhãn + màu cảm xúc)
+- Render nội dung nhật ký (read-only Tiptap hoặc HTML) kèm ảnh đính kèm
+- Nút Sửa và Xóa trên từng thẻ nhật ký (kèm xác nhận khi xóa)
+- Thanh tìm kiếm nhật ký theo nội dung
+- Lịch chọn ngày để tua nhanh đến nhật ký ngày đó
+
+[4] Sidebar - Phần giao cho Khoa (Tách biệt, dễ làm)
+- Thẻ chào người dùng (avatar, "Chào buổi sáng/chiều/tối, User")
+- Thanh tiến độ Năm (hiển thị % năm hiện tại đã trôi qua)
+- Thanh tiến độ 3 Tháng (tháng trước - tháng hiện tại ở giữa - tháng sau, chạy theo số ngày)
+- Thanh tiến độ Ngày (Sáng 0h-12h, Chiều 12h-18h, Tối 18h-24h + đồng hồ thời gian thực)
+- Biểu đồ cảm xúc kiểu GitHub (3 tháng, hover hiện nhãn cảm xúc, bấm vào xem nhật ký ngày đó)
+- Câu quote truyền cảm hứng ngẫu nhiên
+
+[5] Trang Tóm tắt AI (/summary) - Giao cho Khoa
+- [DONE] Giao diện trang `/summary` theo ngôn ngữ thiết kế của ứng dụng
+- [DONE] Nút "Sao chép" chuỗi trích xuất
+- Lọc nhật ký trong DB theo khoảng thời gian (Từ ngày - Đến ngày)
+- Ghép các nhật ký + cảm xúc thành chuỗi prompt chuẩn để người dùng copy sang ChatGPT/Gemini
+
+[6] Trang Cài đặt (/settings) - Giao cho Khoa
+- [IN PROGRESS] Giao diện trang `/settings` (đã có bản nháp ban đầu, cần chỉnh lại theo ngôn ngữ thiết kế chung của app)
+- Đổi font chữ cho nội dung nhật ký
+- Đổi hình nền của ứng dụng
+- Xuất dữ liệu (Export JSON) và Nhập dữ liệu (Import JSON) để sao lưu
+- (Cân nhắc) Đổi theme Sáng / Tối
+- (Cân nhắc) Đặt mật khẩu khóa ứng dụng trước khi xem/viết nhật ký
+
+[7] Hoàn thiện chung
+- Responsive cho màn hình điện thoại (Dashboard, Write, Summary, Settings)
