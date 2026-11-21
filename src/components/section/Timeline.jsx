@@ -21,18 +21,20 @@ const Timeline = () => {
   }
 
   return (
-    <div className="flex-3">
+    <div className="w-full md:flex-3 md:my-6 min-w-0">
       <p>Đây là nội dung của Timeline</p>
-      <Button variant="primary" onClick={() => addData()}>
-        Nút bấm thêm data
-      </Button>
-      <Button variant="secondary" onClick={() => removeData()}>
-        Nút bấm xóa mọi data
-      </Button>
+      <div className="flex flex-wrap gap-2 mt-2">
+        <Button variant="primary" onClick={() => addData()}>
+          Nút bấm thêm data
+        </Button>
+        <Button variant="secondary" onClick={() => removeData()}>
+          Nút bấm xóa mọi data
+        </Button>
+      </div>
 
-      <div>
+      <div className="mt-3 space-y-1">
         {list.map((item, index) => (
-          <p key={index}>
+          <p key={index} className="break-all text-sm">
             {item.id}-{item.title}-{item.desc}
           </p>
         ))}

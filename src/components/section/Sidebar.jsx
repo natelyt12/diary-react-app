@@ -6,18 +6,18 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex-1 my-6 h-[calc(100dvh-3rem)] flex flex-col gap-4">
+    <div className="w-full md:flex-1 md:min-w-70 md:my-6 md:h-[calc(100dvh-3rem)] flex flex-col gap-4">
       <div className="bg-white rounded-2xl p-4 shadow-card">
         <p>
           Nội dung của Sidebar bao gồm progress năm và các tính năng khác như
           bảng lịch, github map.
         </p>
       </div>
-      <div className="bg-white rounded-2xl p-4 shadow-card flex flex-col gap-2">
+      <div className="bg-white rounded-2xl p-4 shadow-card grid grid-cols-2 md:flex md:flex-col gap-2">
         <Button
           icon={<PencilSimple size={18} />}
           onClick={() => navigate("/write")}
-          className="w-full"
+          className="w-full col-span-2 md:col-span-1"
         >
           Viết nhật ký
         </Button>
